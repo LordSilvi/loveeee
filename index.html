@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi niña hermosa ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background:
+        linear-gradient(rgba(8, 10, 28, .76), rgba(12, 8, 30, .86)),
+        url("fondo-romantico.png") center center / cover fixed;
+    overflow-x: hidden;
+}
+
+/* Fondo y ambiente */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        transparent 10%,
+        rgba(5, 5, 20, .35) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particles span {
+    position: fixed;
+    bottom: -30px;
+    color: #f6c6e5;
+    opacity: .5;
+    animation: float 12s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particles span:nth-child(2) { left: 30%; animation-delay: 3s; }
+.particles span:nth-child(3) { left: 55%; animation-delay: 6s; }
+.particles span:nth-child(4) { left: 75%; animation-delay: 2s; }
+.particles span:nth-child(5) { left: 90%; animation-delay: 5s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: .6; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Música */
+
+.music {
+    width: min(100%, 430px);
+    margin-bottom: 28px;
+    padding: 13px;
+    border: 1px solid rgba(255,255,255,.17);
+    border-radius: 18px;
+    background: rgba(10, 10, 28, .65);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0,0,0,.25);
+}
+
+.music p {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 9px;
+    color: #f5c9e8;
+    letter-spacing: 1px;
+}
+
+.music iframe {
+    display: block;
+    width: 100%;
+    height: 80px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* Contenedor */
+
+.container {
+    width: min(100%, 760px);
+    text-align: center;
+}
+
+.subtitle {
+    color: #f0c4e2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(48px, 9vw, 76px);
+    font-weight: normal;
+    color: #ffe0f2;
+    text-shadow: 0 0 25px rgba(255, 168, 220, .4);
+    margin-bottom: 12px;
+}
+
+.intro {
+    color: #e6dce9;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 auto 35px;
+    max-width: 500px;
+}
+
+/* Sobre */
+
+.envelope {
+    margin: 20px auto;
+    width: 150px;
+    height: 105px;
+    position: relative;
+    background: linear-gradient(135deg, #c879a9, #784c8c);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(0,0,0,.4);
+    transition: .4s;
+}
+
+.envelope:hover {
+    transform: translateY(-8px) scale(1.04);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 58px solid #e7a6cb;
+}
+
+.envelope::after {
+    content: "❤";
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 27px;
+}
+
+.open-text {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #f5d5eb;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .5; }
+}
+
+/* Carta */
+
+.story {
+    display: none;
+    margin-top: 30px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 22px;
+    background: rgba(9, 9, 26, .78);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 60px rgba(0,0,0,.4);
+    animation: appear .8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chapter-label {
+    font-size: 11px;
+    color: #e9a9d1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.story h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    font-weight: normal;
+    color: #ffd8ed;
+    margin-bottom: 20px;
+}
+
+.message {
+    min-height: 155px;
+    color: #eee6f0;
+    font-size: 14px;
+    line-height: 2;
+    text-align: left;
+    white-space: pre-line;
+}
+
+/* Progreso */
+
+.progress-area {
+    margin: 25px 0;
+}
+
+.progress-text {
+    color: #dcb9d6;
+    font-size: 11px;
+    margin-bottom: 9px;
+}
+
+.progress-bar {
+    height: 4px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.15);
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #b77ac2, #f2b9dd);
+    transition: width .5s ease;
+}
+
+/* Botones */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+button {
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 11px 22px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #a66cae, #754c91);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(210, 139, 205, .3);
+}
+
+button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.special {
+    display: none;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.special p {
+    color: #f2d5e8;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.surprise {
+    display: none;
+    margin-top: 22px;
+    color: #ffe0f1;
+    font-family: 'Great Vibes', cursive;
+    font-size: 31px;
+    line-height: 1.5;
+    animation: appear 1s ease;
+}
+
+footer {
+    margin-top: 35px;
+    color: rgba(255,255,255,.6);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    main { padding: 20px 14px; }
+    .story { padding: 23px 18px; }
+    .story h2 { font-size: 35px; }
+    .message { font-size: 13px; }
+    body { background-attachment: scroll; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="particles">
+    <span>✦</span>
+    <span>♡</span>
+    <span>✧</span>
+    <span>♡</span>
+    <span>✦</span>
+</div>
+
+<main>
+
+    <div class="music">
+        <p>UNA CANCIÓN PARA ACOMPAÑAR ESTAS PALABRAS</p>
+        <iframe
+            src="https://open.spotify.com/embed/track/3qAJAUr7yc9bPDx4ESt6ND?utm_source=generator"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="container">
+
+        <div id="start">
+            <p class="subtitle">Algo que quiero decirte...</p>
+            <h1>Mi niña hermosa</h1>
+
+            <p class="intro">
+                Hay palabras que a veces cuesta decir en voz alta.
+                Por eso quise escribirlas de una manera diferente,
+                con todo lo que llevo dentro de mi corazón.
+            </p>
+
+            <div class="envelope" onclick="openLetter()"></div>
+            <p class="open-text">Toca el sobre para abrir tu carta ♡</p>
+        </div>
+
+        <section class="story" id="story">
+
+            <p class="chapter-label" id="chapterLabel">CAPÍTULO 1</p>
+            <h2 id="chapterTitle"></h2>
+
+            <div class="message" id="message"></div>
+
+            <div class="progress-area">
+                <p class="progress-text" id="progressText"></p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="prevBtn" onclick="previousChapter()">← Anterior</button>
+                <button id="nextBtn" onclick="nextChapter()">Siguiente →</button>
+            </div>
+
+            <div class="special" id="special">
+                <p>
+                    Llegaste al final de estas palabras, pero quería dejarte
+                    algo más...
+                </p>
+
+                <button onclick="showSurprise()" style="margin-top:18px;">
+                    Descubre el último mensaje ♡
+                </button>
+
+                <div class="surprise" id="surprise">
+                    No sé qué nos espera mañana, pero hoy quería que supieras
+                    que lo que siento por ti es real. No quiero que tengas
+                    que adivinar cuánto significas para mí.
+
+                    <br><br>
+
+                    Solamente deseo que, si seguimos caminando juntos,
+                    sea porque ambos lo queremos.
+
+                    <br><br>
+
+                    Con todo mi cariño, para ti. ❤️
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>HECHO CON SINCERIDAD Y MUCHO CARIÑO ♡</footer>
+
+</main>
+
+<script>
+
+const chapters = [
+    {
+        title: "Lo que siento por ti...",
+        text: `Mi niña hermosa:
+
+Sé que últimamente no estamos pasando por nuestro mejor momento y que las cosas entre nosotros no han sido tan sencillas.
+
+Aun así, quiero que sepas que estoy muy enamorado de ti. No te escribo esto para reclamarte nada, sino porque hay cosas que llevo dentro y que necesito expresar con sinceridad.`
+    },
+    {
+        title: "Hay algo en ti...",
+        text: `Me encanta tu sonrisa, tus ojos y esos pequeños detalles que quizá tú no notas, pero que para mí significan muchísimo.
+
+Tienes una manera de hacerme sentir cosas que creía que ya no volvería a experimentar.
+
+Y aunque a veces no encuentre las palabras correctas, quiero que sepas lo especial que eres para mí.`
+    },
+    {
+        title: "Lo que necesito...",
+        text: `No busco una relación perfecta, ni espero que todo sea bonito todos los días.
+
+Solamente quiero sentir que el cariño viene de los dos lados, que nos buscamos, que nos escuchamos y que ambos tenemos ganas de cuidar lo que estamos construyendo.
+
+No quiero obligarte a demostrar algo que no sientes. Quiero que todo nazca de manera sincera.`
+    },
+    {
+        title: "Una respuesta sincera...",
+        text: `Hay algo que quisiera preguntarte y me gustaría que me respondieras desde lo que realmente sientes.
+
+¿De verdad me quieres en tu vida?
+
+No quiero que me digas que sí solamente para hacerme sentir bien. Prefiero conocer tu verdad, aunque sea difícil de escuchar, porque creo que los dos merecemos sinceridad.`
+    },
+    {
+        title: "Desde mi corazón...",
+        text: `Quiero contarte algo que quizá no te he explicado del todo.
+
+Antes de conocerte pasé mucho tiempo sintiéndome solo y con el corazón cerrado. No esperaba volver a sentir algo tan bonito por alguien.
+
+Y llegaste tú. Fuiste la primera mujer que consiguió despertar en mí sentimientos que creía olvidados.`
+    },
+    {
+        title: "Lo que significas...",
+        text: `No quiero que pienses que para mí eres una persona más.
+
+Significas mucho y por eso me importa lo que sucede entre nosotros.
+
+Me gustaría que pudiéramos encontrar la manera de entendernos, de mejorar y de volver a disfrutar esos momentos en los que estar juntos se sentía tan bonito.
+
+Pero quiero que los dos lo deseemos.`
+    },
+    {
+        title: "Para terminar...",
+        text: `Estas palabras son sinceras. No las escribí esperando una respuesta perfecta ni para hacerte sentir comprometida.
+
+Solamente quería abrirte mi corazón y recordarte que hay alguien que te quiere muchísimo.
+
+No sé qué nos espera, pero sí sé que lo que he sentido por ti ha sido real.
+
+Gracias por haber llegado a mi vida.`
+    }
+];
+
+let current = 0;
+let typingTimer;
+
+function openLetter() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("story").style.display = "block";
+    renderChapter();
+}
+
+function renderChapter() {
+    clearInterval(typingTimer);
+
+    const chapter = chapters[current];
+
+    document.getElementById("chapterLabel").textContent =
+        `CAPÍTULO ${current + 1} DE ${chapters.length}`;
+
+    document.getElementById("chapterTitle").textContent = chapter.title;
+
+    const message = document.getElementById("message");
+    message.textContent = "";
+
+    let i = 0;
+
+    typingTimer = setInterval(() => {
+        message.textContent += chapter.text.charAt(i);
+        i++;
+
+        if (i >= chapter.text.length) {
+            clearInterval(typingTimer);
+        }
+    }, 22);
+
+    document.getElementById("progressText").textContent =
+        `${current + 1} / ${chapters.length}`;
+
+    document.getElementById("progressFill").style.width =
+        `${((current + 1) / chapters.length) * 100}%`;
+
+    document.getElementById("prevBtn").disabled = current === 0;
+
+    const nextBtn = document.getElementById("nextBtn");
+
+    if (current === chapters.length - 1) {
+        nextBtn.style.display = "none";
+        document.getElementById("special").style.display = "block";
+    } else {
+        nextBtn.style.display = "inline-block";
+        document.getElementById("special").style.display = "none";
+    }
+}
+
+function nextChapter() {
+    if (current < chapters.length - 1) {
+        current++;
+        renderChapter();
+    }
+}
+
+function previousChapter() {
+    if (current > 0) {
+        current--;
+        renderChapter();
+    }
+}
+
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
